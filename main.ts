@@ -1,14 +1,16 @@
-let DonneeBLU = 0
+let DonneeBLU = ""
 led.enable(false)
 serial.redirect(
 SerialPin.P14,
 SerialPin.P13,
 BaudRate.BaudRate115200
 )
-pins.servoWritePin(AnalogPin.P4, 0)
 basic.forever(function () {
-    DonneeBLU = 0
-    if (DonneeBLU == 0) {
-        pins.servoWritePin(AnalogPin.P4, 180)
+    DonneeBLU = serial.readString()
+    if (DonneeBLU == "1") {
+        motorbit.forward(100)
+    }
+    if (DonneeBLU == "D") {
+        motorbit.brake()
     }
 })

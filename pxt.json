@@ -4,7 +4,10 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "servo": "*",
+        "radio-broadcast": "*",
+        "motorbit": "github:tinkertanker/pxt-motorbit#v2.0.0"
     },
     "files": [
         "main.blocks",
